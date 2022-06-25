@@ -1,2 +1,1 @@
-:
-        print("All the numbers is fine")
+computer_parts
