@@ -188,10 +188,28 @@
 
 
 # Video 98 shorting
-even = [2, 4, 6, 8]
-odd = [1, 3, 5, 7, 9]
+# even = [2, 4, 6, 8]
+# odd = [1, 3, 5, 7, 9]
 
-even.extend(odd)
-even.sort(reverse=True)
-print(even)
+# even.extend(odd)
+# even.sort(reverse=True)
+# print(even)
 
+
+### Video 100
+# Documentation Build in function in python
+# https://docs.python.org/3/library/functions.html
+# shorted is better than sort functions
+
+
+
+pangram = "The quick brown fox jumped over the lazy dog"
+letters = sorted(pangram)
+print(letters)
+print(id(pangram))
+print(id(letters))
+
+
+number = [1, 5, 6, 10, 8, 9, 11, 12, 13]
+sorted_number = sorted(number)
+print(sorted_number)
