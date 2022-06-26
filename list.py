@@ -267,37 +267,66 @@
 
 
 
-data = [4, 5, 104, 105, 110, 120, 130, 130, 150, 160, 170, 183, 185, 187, 188, 191, 350, 360]
-del data[0:2]
-data_copy = data.copy()
-print(data)
-print(data_copy)
+# data = [4, 5, 104, 105, 110, 120, 130, 130, 150, 160, 170, 183, 185, 187, 188, 191, 350, 360]
+# del data[0:2]
+# data_copy = data.copy()
+# print(data)
+# print(data_copy)
 
+# min_valid = 100
+# max_valid = 200
+
+# # This code would not work as expected
+# # for index, value in enumerate(data):
+# #     if(value < min_valid) or (value > max_valid):
+# #         del data[index]
+# # print(data)
+
+# # deleting list value then min_valid
+# stop = 0
+# for index, value in enumerate(data):
+#     if value >= min_valid:
+#         stop = index
+#         break
+# print(stop)
+# del data[:stop]
+# print(data)
+
+# ### video 106 removing the high vlaues
+# start = 0
+# for index in range(len(data) -1, -1, -1):
+#     if data[index] <= max_valid:
+#         start = index + 1
+#         break
+# print(start)
+# del data[start:]
+# print(data)
+
+
+### video 108 testing the program
+
+
+### video 109 removing items from a List Backwards
+
+
+# random data deleting in easy compmare than delate shorted list 
+data = [104, 101, 4, 105, 308, 5, 107, 100, 306, 106, 102, 108]
 min_valid = 100
 max_valid = 200
 
-# This code would not work as expected
-# for index, value in enumerate(data):
-#     if(value < min_valid) or (value > max_valid):
-#         del data[index]
+# for index in range(len(data) - 1, -1, -1):
+#     if(data[index] < min_valid) or (data[index] > max_valid):
+#         print(index)
+#         del (data[index])
 # print(data)
 
-# deleting list value then min_valid
-stop = 0
-for index, value in enumerate(data):
-    if value >= min_valid:
-        stop = index
-        break
-print(stop)
-del data[:stop]
-print(data)
+data = [104, 101, 4, 105, 308, 5, 107, 100, 306, 106, 102, 108]
+min_valid = 100
+max_valid = 200
 
-### video 106 removing the high vlaues
-start = 0
-for index in range(len(data) -1, -1, -1):
-    if data[index] <= max_valid:
-        start = index + 1
-        break
-print(start)
-del data[start:]
+top_index = len(data) - 1
+for index, value in enumerate(reversed(data)):
+    if(value < min_valid) or (value > max_valid):
+        print(top_index - index, value)
+        del data[top_index - index]
 print(data)
