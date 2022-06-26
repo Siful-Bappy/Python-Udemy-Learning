@@ -155,35 +155,43 @@
 # Documentation for build in type -python
 # https://docs.python.org/3/library/stdtypes.html
 
-available_part = ["Computer", "Monitor", "Keyboard", "Mouse", "Mouse Mat", "HDMI Cable"]
+# available_part = ["Computer", "Monitor", "Keyboard", "Mouse", "Mouse Mat", "HDMI Cable"]
 
-valid_choices = []
-for i in range(1, len(available_part) + 1):
-    valid_choices.append(str(i))
+# valid_choices = []
+# for i in range(1, len(available_part) + 1):
+#     valid_choices.append(str(i))
 
-print(valid_choices)
-current_choice = " "
-computer_parts = []
+# print(valid_choices)
+# current_choice = " "
+# computer_parts = []
 
-while current_choice != "0":
-    if current_choice in valid_choices:
-        index = int(current_choice) - 1
-        chosen_part = available_part[index]
-        if chosen_part in computer_parts:
-            print("Rmoving {}".format(current_choice))
-            computer_parts.remove(chosen_part)
-        else:
-            print("Adding {}".format(current_choice))
-            computer_parts.append(chosen_part)
-        print("Your list now contains: {}".format(computer_parts))
+# while current_choice != "0":
+#     if current_choice in valid_choices:
+#         index = int(current_choice) - 1
+#         chosen_part = available_part[index]
+#         if chosen_part in computer_parts:
+#             print("Rmoving+ {}".format(current_choice))
+#             computer_parts.remove(chosen_part)
+#         else:
+#             print("Adding {}".format(current_choice))
+#             computer_parts.append(chosen_part)
+#         print("Your list now contains: {}".format(computer_parts))
 
-    else:
-        print("Please add options from the list below: ")
-        for number, part in enumerate(available_part):
-            print("{0} {1}".format(number + 1, part))
+#     else:
+#         print("Please add options from the list below: ")
+#         for number, part in enumerate(available_part):
+#             print("{0} {1}".format(number + 1, part))
 
-    current_choice = input("Enter your option: ")
+#     current_choice = input("Enter your option: ")
 
-print(computer_parts)
+# print(computer_parts)
 
+
+# Video 98 shorting
+even = [2, 4, 6, 8]
+odd = [1, 3, 5, 7, 9]
+
+even.extend(odd)
+even.sort(reverse=True)
+print(even)
 
