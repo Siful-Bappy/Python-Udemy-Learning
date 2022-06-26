@@ -203,13 +203,22 @@
 
 
 
+# pangram = "The quick brown fox jumped over the lazy dog"
+# letters = sorted(pangram)
+# print(letters)
+# print(id(pangram))
+# print(id(letters))
+
+
+# number = [1, 5, 6, 10, 8, 9, 11, 12, 13]
+# sorted_number = sorted(number)
+# print(sorted_number)
+
+### video 101 without care about case cencitive 
 pangram = "The quick brown fox jumped over the lazy dog"
-letters = sorted(pangram)
-print(letters)
-print(id(pangram))
-print(id(letters))
+missing_letter = sorted(pangram, key=str.casefold)
+print(missing_letter)
 
-
-number = [1, 5, 6, 10, 8, 9, 11, 12, 13]
-sorted_number = sorted(number)
-print(sorted_number)
+name = ["Graaham", "John", "terry", "eric", "Terry", "michael"]
+name.sort(key=str.casefold)
+print(name)
