@@ -310,9 +310,9 @@
 
 
 # random data deleting in easy compmare than delate shorted list 
-data = [104, 101, 4, 105, 308, 5, 107, 100, 306, 106, 102, 108]
-min_valid = 100
-max_valid = 200
+# data = [104, 101, 4, 105, 308, 5, 107, 100, 306, 106, 102, 108]
+# min_valid = 100
+# max_valid = 200
 
 # for index in range(len(data) - 1, -1, -1):
 #     if(data[index] < min_valid) or (data[index] > max_valid):
@@ -320,13 +320,87 @@ max_valid = 200
 #         del (data[index])
 # print(data)
 
-data = [104, 101, 4, 105, 308, 5, 107, 100, 306, 106, 102, 108]
-min_valid = 100
-max_valid = 200
+# data = [104, 101, 4, 105, 308, 5, 107, 100, 306, 106, 102, 108]
+# min_valid = 100
+# max_valid = 200
 
-top_index = len(data) - 1
-for index, value in enumerate(reversed(data)):
-    if(value < min_valid) or (value > max_valid):
-        print(top_index - index, value)
-        del data[top_index - index]
-print(data)
+# top_index = len(data) - 1
+# for index, value in enumerate(reversed(data)):
+#     if(value < min_valid) or (value > max_valid):
+#         print(top_index - index, value)
+#         del data[top_index - index]
+# print(data)
+
+
+### video 111 Algorithms Performance 
+# max_value = 100
+# data_list = list(range(max_value))
+# print(data_list)
+
+
+### video 113 Nested List & Code style
+
+# empty = []
+# even = [2, 4, 6, 8]
+# odd = [1, 3, 5, 7, 9]
+# number = [even, odd]
+# print(number)
+
+# for number_list in number:
+#     print(number_list)
+#     for value in number_list:
+#         print(value)
+
+### video 114 processing nested lists
+### video 115 solution to nonspam challange
+menu = [
+    ["egg", "bacon"],
+    ["egg", "sausage", 'bacon'],
+    ["egg", "spam"],
+    ["egg", 'bacon', "spam"],
+    ["egg", 'bacon', 'sausage', 'spam'],
+    ["spam", 'bacon', 'sausage', 'spam'],
+    ["spam", "sausage", "spam", "bacon", "spam", "tomato", "spam"],
+    ["spam", "egg", "spam", "spam", "bacon", "spam"],
+]
+
+# for meal in menu:
+#     for index in range(len(meal) - 1, -1, -1):
+#         if(meal[index] == "spam"):
+#             del meal[index]
+#     print(meal)
+
+# second way
+# for meal in menu:
+#     for item in meal:
+#         if item != "spam":
+#             print(item, end= "")
+#     print()
+
+
+### video 116 function signature
+### vide 117 print revisted
+
+# name = "Tim"
+# age = 10
+# print(name, age, "Python", 2020)
+# print(name, age, "Python", 2020, sep = ", ")
+
+
+### video 118 The join mathod
+menu = [
+    ["egg", "bacon"],
+    ["egg", "sausage", 'bacon'],
+    ["egg", "spam"],
+    ["egg", 'bacon', "spam"],
+    ["egg", 'bacon', 'sausage', 'spam'],
+    ["spam", 'bacon', 'sausage', 'spam'],
+    ["spam", "sausage", "spam", "bacon", "spam", "tomato", "spam"],
+    ["spam", "egg", "spam", "spam", "bacon", "spam"],
+]
+
+for meal in menu:
+    for index in range(len(meal) - 1, -1, -1):
+        if(meal[index] == "spam"):
+            del meal[index]
+    print(", ".join(meal))
