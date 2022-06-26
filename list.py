@@ -215,10 +215,37 @@
 # print(sorted_number)
 
 ### video 101 without care about case cencitive 
-pangram = "The quick brown fox jumped over the lazy dog"
-missing_letter = sorted(pangram, key=str.casefold)
-print(missing_letter)
+# pangram = "The quick brown fox jumped over the lazy dog"
+# missing_letter = sorted(pangram, key=str.casefold)
+# print(missing_letter)
+
+# name = ["Graaham", "John", "terry", "eric", "Terry", "michael"]
+# name.sort(key=str.casefold)
+# print(name)
+
+### Video 102
+
 
 name = ["Graaham", "John", "terry", "eric", "Terry", "michael"]
-name.sort(key=str.casefold)
-print(name)
+empay_list = []
+even = [2, 4, 6, 8]
+odd = [1, 3, 5, 7, 9]
+even.extend(odd)
+number = even + odd
+print(even)
+print(number)
+
+digit1 = sorted("14293597")
+digit = list("14293597")
+print(digit)
+print(digit1)
+
+number_general = 14293597
+number_list = list(str(number_general))
+print(number_list)
+print(list (number))
+
+more_number = number[:]
+more_number_copy = more_number.copy()
+print(more_number)
+print(more_number_copy)
