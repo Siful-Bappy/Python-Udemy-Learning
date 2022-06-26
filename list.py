@@ -252,14 +252,52 @@
 
 ### video 103
 
-computer_parts = ["Computer", "Monitor", "Keyboard", "Mouse", "Mouse Mat", "HDMI Cable"]
-print(computer_parts)
+# computer_parts = ["Computer", "Monitor", "Keyboard", "Mouse", "Mouse Mat", "HDMI Cable"]
+# print(computer_parts)
 
-### replace index 3 with trackball
-# computer_parts[3] = "trackball" 
+# ### replace index 3 with trackball
+# # computer_parts[3] = "trackball" 
 
-computer_parts[3:] = ["trackball"]
-print(computer_parts)
+# computer_parts[3:] = ["trackball"]
+# print(computer_parts)
+
+
+### video 104 deleting item from a list
+### vide 105
 
 
 
+data = [4, 5, 104, 105, 110, 120, 130, 130, 150, 160, 170, 183, 185, 187, 188, 191, 350, 360]
+del data[0:2]
+data_copy = data.copy()
+print(data)
+print(data_copy)
+
+min_valid = 100
+max_valid = 200
+
+# This code would not work as expected
+# for index, value in enumerate(data):
+#     if(value < min_valid) or (value > max_valid):
+#         del data[index]
+# print(data)
+
+# deleting list value then min_valid
+stop = 0
+for index, value in enumerate(data):
+    if value >= min_valid:
+        stop = index
+        break
+print(stop)
+del data[:stop]
+print(data)
+
+### video 106 removing the high vlaues
+start = 0
+for index in range(len(data) -1, -1, -1):
+    if data[index] <= max_valid:
+        start = index + 1
+        break
+print(start)
+del data[start:]
+print(data)
