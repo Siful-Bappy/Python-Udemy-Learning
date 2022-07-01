@@ -570,33 +570,41 @@
 ### video 132 simple jukebox -Importing Data
 ### Really benifical video for importing data
 ### video 133 constants in Python
-from nested_data import albums
+# from nested_data import albums
 
-SONGS_LIST_INDEX = 3
-SONG_TITLE_INDEX = 1
-while True:
-    print("Please choose your album (invalid choice exists) ")
-    for index, (title, artist, year, songs) in enumerate(albums):
-        print("{}: {}".format(index + 1, title))
+# SONGS_LIST_INDEX = 3
+# SONG_TITLE_INDEX = 1
+# while True:
+#     print("Please choose your album (invalid choice exists) ")
+#     for index, (title, artist, year, songs) in enumerate(albums):
+#         print("{}: {}".format(index + 1, title))
     
-    choice = int(input("Please enter your favourite album index: "))
-    if 1 <= choice <= len(albums):
-        songs_list = albums[choice - 1][SONGS_LIST_INDEX]
+#     choice = int(input("Please enter your favourite album index: "))
+#     if 1 <= choice <= len(albums):
+#         songs_list = albums[choice - 1][SONGS_LIST_INDEX]
 
-    else:
-        break
+#     else:
+#         break
     
-    print("Please Choose your song: ")
-    for index, (track_number, song) in enumerate(songs_list):
-        print("{}: {}".format(index + 1, song))
+#     print("Please Choose your song: ")
+#     for index, (track_number, song) in enumerate(songs_list):
+#         print("{}: {}".format(index + 1, song))
 
-    song_choice = int(input("Please choose the song number: "))
-    if 1<= song_choice <= len(songs_list):
-        title = songs_list[song_choice - 1][SONG_TITLE_INDEX]
-    else:
-        break
+#     song_choice = int(input("Please choose the song number: "))
+#     if 1<= song_choice <= len(songs_list):
+#         title = songs_list[song_choice - 1][SONG_TITLE_INDEX]
+#     else:
+#         break
 
-    print("Playing {}".format(title))
-    print("*" * 30)
+#     print("Playing {}".format(title))
+#     print("*" * 30)
 
 
+a = 10
+b = 20
+if a == 10:
+    print("The value of a is 10")
+    if b == 20:
+        c = 300
+        print("I got the value of c and it's 300")
+print("This is the test if I got the vlaue of c or not")
