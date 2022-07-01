@@ -407,9 +407,43 @@
 
 
 ### Video 119 The split method
-from ntpath import join
 
 
-panagram = "The quick brown fox jumped over the lazy dog"
-words = panagram.split(" ")
-print("".join(words))
+# panagram = "The quick brown fox jumped over the lazy dog"
+# words = panagram.split(" ")
+# print("".join(words))
+
+
+
+
+### start the section of Tauples
+### video 121 Tuples
+### A tuple is mathematical name of an ordered set of data
+### Tuples are another sequence type alsong with strings, lists and range.
+### Tuples differ from list
+### Tuples are immutable(So cant change after they are created just like strings)
+
+
+# t = "a", "b", "c", "d", "e", "f"
+# print(t)
+
+# name = "Tim"
+# age = 10
+# print(name, age, "Python", 2020)
+# print((name, age, "Python", 2020))
+
+
+
+### video 122 tuples are Immutable
+welcome = "Welcome to my Nightmare", "Alice Cooper", 1975
+bad = "Bad company", "Bad company", 1974
+budgie = "Nightflight", "Budgie", 1981
+imelda = "More Mayhem", "Emilda May", 2011
+metallica = "Ride the Lightning", "Metallica", 1984
+
+print(metallica)
+### converting tuples to list
+print(list(metallica))
+# print(metallica[0])
+# print(metallica[1])
+# print(metallica[2])
