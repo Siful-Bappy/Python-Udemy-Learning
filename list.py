@@ -478,15 +478,86 @@
 
 
 ### video 127 Nested Tuples and Lists
-albums = [("Welcome to my Nightmare", "Alice Cooper", 1975),
-    ("Bad company", "Bad company", 1974),
-    ("Nightflight", "Budgie", 1981),
-    ("More Mayhem", "Emilda May", 2011),
-    ("Ride the Lightning", "Metallica", 1984)
-]
+# albums = [("Welcome to my Nightmare", "Alice Cooper", 1975),
+#     ("Bad company", "Bad company", 1974),
+#     ("Nightflight", "Budgie", 1981),
+#     ("More Mayhem", "Emilda May", 2011),
+#     ("Ride the Lightning", "Metallica", 1984)
+# ]
 # print(len(albums))
-for name, artist, year in albums:
+# for name, artist, year in albums:
     # print(album)
     # print("Album: {}, Artist: {}, Year: {}".format(album[0], album[1], album[2]))
-    print("Album: {}, Artist: {}, Year: {}".format(name, artist, year))
+    # print("Album: {}, Artist: {}, Year: {}".format(name, artist, year))
 
+### video 128 Nesting Further
+### video 129 Nested Data structures
+albums = [
+    ("Welcome to my Nightmare", "Alice Cooper", 1975,
+     [
+         (1, "Welcome to my Nightmare"),
+         (2, "Devil's Food"),
+         (3, "The Black Widow"),
+         (4, "Some Folks"),
+         (5, "Only Women Bleed"),
+     ]
+     ),
+    ("Bad Company", "Bad Company", 1974,
+     [
+         (1, "Can't Get Enough"),
+         (2, "Rock Steady"),
+         (3, "Ready for Love"),
+         (4, "Don't Let Me Down"),
+         (5, "Bad Company"),
+         (6, "The Way I Choose"),
+         (7, "Movin' On"),
+         (8, "Seagull"),
+     ]
+     ),
+    ("Nightflight", "Budgie", 1981,
+     [
+         (1, "I Turned to Stone"),
+         (2, "Keeping a Rendezvous"),
+         (3, "Reaper of the Glory"),
+         (4, "She Used Me Up"),
+     ]
+     ),
+    ("More Mayhem", "Imelda May", 2011,
+     [
+         (1, "Pulling the Rug"),
+         (2, "Psycho"),
+         (3, "Mayhem"),
+         (4, "Kentish Town Waltz"),
+     ]
+     ),
+]
+
+for name, artist, year, songs in albums:
+    print("Album: {}, Artist: {}, Year: {}, Songs: {}".format(name, artist, year, songs))
+    # print("-" * 80)
+    # print(songs)
+    # for index, song_name in songs:
+        # print(song_name)
+print("-" * 80)
+
+# print(songs)
+song_list = albums[2]
+print(song_list)
+
+
+### video 130 Nested Indexing
+for name, artist, year, songs in albums:
+    print("Album: {}, Artist: {}, Year: {}, Songs: {}".format(name, artist, year, songs))
+print()
+
+album = albums[3]
+print(album)
+
+songs = songs[3]
+print(songs)
+
+song = songs[2]
+print(song)
+print(song[1])
+
+mayhem = albums[3][3][2][1]
