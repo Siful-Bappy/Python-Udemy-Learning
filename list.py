@@ -435,15 +435,36 @@
 
 
 ### video 122 tuples are Immutable
-welcome = "Welcome to my Nightmare", "Alice Cooper", 1975
-bad = "Bad company", "Bad company", 1974
-budgie = "Nightflight", "Budgie", 1981
-imelda = "More Mayhem", "Emilda May", 2011
-metallica = "Ride the Lightning", "Metallica", 1984
+# welcome = "Welcome to my Nightmare", "Alice Cooper", 1975
+# bad = "Bad company", "Bad company", 1974
+# budgie = "Nightflight", "Budgie", 1981
+# imelda = "More Mayhem", "Emilda May", 2011
+# metallica = "Ride the Lightning", "Metallica", 1984
 
-print(metallica)
+# print(metallica)
 ### converting tuples to list
-print(list(metallica))
+# print(list(metallica))
 # print(metallica[0])
 # print(metallica[1])
 # print(metallica[2])
+
+
+### video 123 unpacking a tuple
+# a = b = c = d = e = f = g = h = i = j = 10, 20
+# print(a)
+# bappy1, bappy2 = 10, 20
+# print(bappy1)
+
+# data_list = [12, 13, 14,]
+# p, q, r = data_list
+# print(p)
+# print(q)
+# print(r)
+
+
+### video 124 Practical uses for Unpacking tauples
+### short version of tuple by using index and value
+for t in enumerate("abcdefg"):
+    index, value = t
+    # print(t)
+    print(index, value)
