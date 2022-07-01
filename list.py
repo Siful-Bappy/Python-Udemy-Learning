@@ -464,7 +464,29 @@
 
 ### video 124 Practical uses for Unpacking tauples
 ### short version of tuple by using index and value
-for t in enumerate("abcdefg"):
-    index, value = t
-    # print(t)
-    print(index, value)
+# for t in enumerate("abcdefg"):
+#     index, value = t
+#     # print(t)
+#     print(index, value)
+
+
+### video 125 More Unpacking
+# table = ("Coffee table", 200, 100, 75, 34.50)
+# print(table[1] * table[2])
+# name, height, width, length, price = table
+# print(height * width)
+
+
+### video 127 Nested Tuples and Lists
+albums = [("Welcome to my Nightmare", "Alice Cooper", 1975),
+    ("Bad company", "Bad company", 1974),
+    ("Nightflight", "Budgie", 1981),
+    ("More Mayhem", "Emilda May", 2011),
+    ("Ride the Lightning", "Metallica", 1984)
+]
+# print(len(albums))
+for name, artist, year in albums:
+    # print(album)
+    # print("Album: {}, Artist: {}, Year: {}".format(album[0], album[1], album[2]))
+    print("Album: {}, Artist: {}, Year: {}".format(name, artist, year))
+
