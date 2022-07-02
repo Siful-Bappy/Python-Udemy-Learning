@@ -600,11 +600,11 @@
 #     print("*" * 30)
 
 
-a = 10
-b = 20
-if a == 10:
-    print("The value of a is 10")
-    if b == 20:
-        c = 300
-        print("I got the value of c and it's 300")
-print("This is the test if I got the vlaue of c or not")
+# a = 10
+# b = 20
+# if a == 10:
+#     print("The value of a is 10")
+#     if b == 20:
+#         c = 300
+#         print("I got the value of c and it's 300")
+# print("This is the test if I got the vlaue of c or not")
