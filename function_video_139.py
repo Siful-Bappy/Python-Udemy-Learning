@@ -50,11 +50,49 @@
 
 
 ### video 151 Functions that perfom actions means it not return anything
-def banner_text(text):
-    screen_width = 80
+# def banner_text(text):
+#     screen_width = 80
+#     if len(text) > screen_width - 4:
+#         print("EED!!")
+#         print("THE TEXT IS TOO LONG TO FIT IN THE SPECIFIED WIDTH")
+    
+#     if text == "*":
+#         print("*" * screen_width)
+#     else:
+#         output_string = "**{0}**".format(text.center(screen_width - 4))
+#         print(output_string)
+
+# banner_text("*")
+# banner_text("Always look on the bright side of life...")
+# banner_text("If lfe seems jolly rotten,")
+# banner_text("There's something you've forgotten!")
+# banner_text("And that's to laugh and smile and dance and sing,")
+# banner_text(" ")
+# banner_text("When you're felling in the dumps,")
+# banner_text("Don't be silly chumps")
+# banner_text("Just purse your lips and whistle - that's the thing!")
+# banner_text("And... always look on the bright side of life...")
+# banner_text("*")
+
+
+### video 152 handling invalid argument
+### video 154 default parameters values 
+### video 157 writing a docstring
+### documention of build in exception https://docs.python.org/3/library/exceptions.html
+
+def banner_text(text, screen_width=50):
+    """
+    Get an integerfrom stardard input ()
+    
+    the print `str` value 
+
+    :param text - The text should be string
+           screen_width - here used 50 however user can specifid the value
+    :return: The function wouldn't return anything
+    """
+
     if len(text) > screen_width - 4:
-        print("EED!!")
-        print("THE TEXT IS TOO LONG TO FIT IN THE SPECIFIED WIDTH")
+        raise ValueError("String {0} is larger then specifid width {1}".format(text, screen_width))
     
     if text == "*":
         print("*" * screen_width)
@@ -62,14 +100,23 @@ def banner_text(text):
         output_string = "**{0}**".format(text.center(screen_width - 4))
         print(output_string)
 
-banner_text("*")
-banner_text("Always look on the bright side of life...")
-banner_text("If lfe seems jolly rotten,")
-banner_text("There's something you've forgotten!")
-banner_text("And that's to laugh and smile and dance and sing,")
-banner_text(" ")
-banner_text("When you're felling in the dumps,")
-banner_text("Don't be silly chumps")
-banner_text("Just purse your lips and whistle - that's the thing!")
-banner_text("And... always look on the bright side of life...")
-banner_text("*")
+### way to display doc string or default doc string
+# print(input.__doc__)
+# print("*" * 80)
+# print(banner_text.__doc__)
+
+### another way to display doc string or default doc string 
+help(banner_text)
+
+# banner_text("*")
+# banner_text("Always look on the bright side of life...")
+# banner_text("If lfe seems jolly rotten,")
+# banner_text("There's something you've forgotten!")
+# banner_text("And that's to laugh and smile and dance and sing,")
+# banner_text(" ")
+# banner_text("When you're felling in the dumps,")
+# banner_text("Don't be silly chumps")
+# banner_text("Just purse your lips and whistle - that's the thing!")
+# banner_text("And... always look on the bright side of life...")
+# banner_text("*")
+
