@@ -80,7 +80,7 @@
 ### video 157 writing a docstring
 ### documention of build in exception https://docs.python.org/3/library/exceptions.html
 
-# def banner_text(text, screen_width=50):
+# def banner_text(text: str, screen_width: int =50) -> None:
 #     """
 #     Get an integerfrom stardard input ()
     
@@ -123,13 +123,14 @@
 
 ### video 160 Fibonacci numbers
 ### video 161 Wringt a Fibonacci function
+### video 162 Function annotations and type hints 
 ### documentation for  economy of exception https://devguide.python.org/documenting/#economy-of-expression
 
-def fibonacci(n):
-    """Returns] the `n`-th Fibonacci number, for prositive `n`."""
+# def fibonacci(n: int) -> int:
+#     """Returns] the `n`-th Fibonacci number, for prositive `n`."""
 
-    if 0 <= n <= 1:
-        return n
+#     if 0 <= n <= 1:
+#         return n
 
     # n_minus1, n_minus2 = 1, 0
     # result = None
@@ -139,13 +140,54 @@ def fibonacci(n):
     #     n_minus2 = n_minus1
     #     n_minus1 = result
 
-    n_number, n_plus1_number = 0, 1
-    for i in range(n):
-        result = n_number + n_plus1_number
-        n_plus1_number = n_number
-        n_number = result 
+#     n_number, n_plus1_number = 0, 1
+#     for i in range(n):
+#         result = n_number + n_plus1_number
+#         n_plus1_number = n_number
+#         n_number = result 
 
-    return result 
+#     return result 
 
-for i in range(36):
-    print("{} : {}".format(i, fibonacci(i)))
+# for i in range(36):
+#     print("{} : {}".format(i, fibonacci()))
+
+
+### video 166 printing in color
+
+BLACK = "\u001b[30m"
+RED = "\u001b[31m"
+GREEN = "\u001b[32m"
+YELLOW = "\u001b[33m"
+BLUE = "\u001b[34m"
+MAGENTA = "\u001b[35m"
+CYAN = "\u001b[36m"
+WHITE = "\u001b[37m"
+RESET = "\u001b[0m"
+
+BOLD = "\u001b[1m"
+UNDERLINE = "\u001b[4m"
+REVERSE = "\u001b[7m"
+
+print(MAGENTA, "This will be in red")
+print(GREEN, "This will be in green")
+
+def color_print(text: str, effect: str) -> None:
+    """
+    Print `Text` using the ANSI sequences to change the color, etc
+
+    :param text: The text to print.
+    :param effect: The effect we want, one of the constants 
+    defined at the start of this module.
+    """
+
+    output_string = "{} {} {}".format(effect, text, RESET)
+    print(output_string)
+
+color_print("Hello, Red", RED)
+print("This should be in the default terminal color.")
+color_print("Hello, Blue", BLUE)
+color_print("Hello, Yellow", YELLOW)
+color_print("Hello bold", BOLD)
+color_print("Hello Underline", UNDERLINE)
+color_print("Hello Reverse", REVERSE)
+color_print("Hello Black", BLACK)
