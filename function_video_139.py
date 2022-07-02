@@ -80,25 +80,25 @@
 ### video 157 writing a docstring
 ### documention of build in exception https://docs.python.org/3/library/exceptions.html
 
-def banner_text(text, screen_width=50):
-    """
-    Get an integerfrom stardard input ()
+# def banner_text(text, screen_width=50):
+#     """
+#     Get an integerfrom stardard input ()
     
-    the print `str` value 
+#     the print `str` value 
 
-    :param text - The text should be string
-           screen_width - here used 50 however user can specifid the value
-    :return: The function wouldn't return anything
-    """
+#     :param text - The text should be string
+#            screen_width - here used 50 however user can specifid the value
+#     :return: The function wouldn't return anything
+#     """
 
-    if len(text) > screen_width - 4:
-        raise ValueError("String {0} is larger then specifid width {1}".format(text, screen_width))
+#     if len(text) > screen_width - 4:
+#         raise ValueError("String {0} is larger then specifid width {1}".format(text, screen_width))
     
-    if text == "*":
-        print("*" * screen_width)
-    else:
-        output_string = "**{0}**".format(text.center(screen_width - 4))
-        print(output_string)
+#     if text == "*":
+#         print("*" * screen_width)
+#     else:
+#         output_string = "**{0}**".format(text.center(screen_width - 4))
+#         print(output_string)
 
 ### way to display doc string or default doc string
 # print(input.__doc__)
@@ -106,7 +106,7 @@ def banner_text(text, screen_width=50):
 # print(banner_text.__doc__)
 
 ### another way to display doc string or default doc string 
-help(banner_text)
+# help(banner_text)
 
 # banner_text("*")
 # banner_text("Always look on the bright side of life...")
@@ -120,3 +120,32 @@ help(banner_text)
 # banner_text("And... always look on the bright side of life...")
 # banner_text("*")
 
+
+### video 160 Fibonacci numbers
+### video 161 Wringt a Fibonacci function
+### documentation for  economy of exception https://devguide.python.org/documenting/#economy-of-expression
+
+def fibonacci(n):
+    """Returns] the `n`-th Fibonacci number, for prositive `n`."""
+
+    if 0 <= n <= 1:
+        return n
+
+    # n_minus1, n_minus2 = 1, 0
+    # result = None
+    
+    # for f in range(n - 1):
+    #     result = n_minus1 + n_minus2
+    #     n_minus2 = n_minus1
+    #     n_minus1 = result
+
+    n_number, n_plus1_number = 0, 1
+    for i in range(n):
+        result = n_number + n_plus1_number
+        n_plus1_number = n_number
+        n_number = result 
+
+    return result 
+
+for i in range(36):
+    print("{} : {}".format(i, fibonacci(i)))
