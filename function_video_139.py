@@ -154,40 +154,56 @@
 
 ### video 166 printing in color
 
-BLACK = "\u001b[30m"
-RED = "\u001b[31m"
-GREEN = "\u001b[32m"
-YELLOW = "\u001b[33m"
-BLUE = "\u001b[34m"
-MAGENTA = "\u001b[35m"
-CYAN = "\u001b[36m"
-WHITE = "\u001b[37m"
-RESET = "\u001b[0m"
+# BLACK = "\u001b[30m"
+# RED = "\u001b[31m"
+# GREEN = "\u001b[32m"
+# YELLOW = "\u001b[33m"
+# BLUE = "\u001b[34m"
+# MAGENTA = "\u001b[35m"
+# CYAN = "\u001b[36m"
+# WHITE = "\u001b[37m"
+# RESET = "\u001b[0m"
 
-BOLD = "\u001b[1m"
-UNDERLINE = "\u001b[4m"
-REVERSE = "\u001b[7m"
+# BOLD = "\u001b[1m"
+# UNDERLINE = "\u001b[4m"
+# REVERSE = "\u001b[7m"
 
-print(MAGENTA, "This will be in red")
-print(GREEN, "This will be in green")
+# print(MAGENTA, "This will be in red")
+# print(GREEN, "This will be in green")
 
-def color_print(text: str, effect: str) -> None:
-    """
-    Print `Text` using the ANSI sequences to change the color, etc
+# def color_print(text: str, effect: str) -> None:
+    # """
+    # Print `Text` using the ANSI sequences to change the color, etc
 
-    :param text: The text to print.
-    :param effect: The effect we want, one of the constants 
-    defined at the start of this module.
-    """
+    # :param text: The text to print.
+    # :param effect: The effect we want, one of the constants 
+    # defined at the start of this module.
+    # """
 
-    output_string = "{} {} {}".format(effect, text, RESET)
-    print(output_string)
+#     output_string = "{} {} {}".format(effect, text, RESET)
+#     print(output_string)
 
-color_print("Hello, Red", RED)
-print("This should be in the default terminal color.")
-color_print("Hello, Blue", BLUE)
-color_print("Hello, Yellow", YELLOW)
-color_print("Hello bold", BOLD)
-color_print("Hello Underline", UNDERLINE)
-color_print("Hello Reverse", REVERSE)
-color_print("Hello Black", BLACK)
+# color_print("Hello, Red", RED)
+# print("This should be in the default terminal color.")
+# color_print("Hello, Blue", BLUE)
+# color_print("Hello, Yellow", YELLOW)
+# color_print("Hello bold", BOLD)
+# color_print("Hello Underline", UNDERLINE)
+# color_print("Hello Reverse", REVERSE)
+# color_print("Hello Black", BLACK)
+
+
+### video 175 *args
+
+numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+# print(numbers)
+# print(*numbers)
+# print(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+def test_star(*args):
+    print(args)
+    for x in args:
+        print(x)
+
+test_star(1, 2, 3, 4, 5, 6, 7)
