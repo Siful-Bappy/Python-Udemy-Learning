@@ -137,10 +137,8 @@
 
 ### video 190 --- Smart fridge
 ### video 191 --- What's for tea
-
-from numpy import choose
-
-
+### video 192 --- Using several dictionaries together
+### video 193 --- 
 pantry = {
     "chicken": 500,
     "lemon": 2,
@@ -221,3 +219,16 @@ while True:
     choose = input("-> ")
     if choose == "0":
         break
+    elif choose in display_dict:
+        selected_item = display_dict[choose]
+        print("You have selected {}".format(selected_item))
+        print("Checking ingredients ...")
+        ingredients = recipes[selected_item]
+        print(ingredients)
+        for food_item in ingredients:
+            if food_item in pantry:
+                print("\t{} ok".format(food_item))
+            else:
+                print(f"\tYou don't have a necessary ingredient: {food_item}")
+
+
