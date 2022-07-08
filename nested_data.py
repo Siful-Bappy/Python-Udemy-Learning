@@ -1,3 +1,4 @@
+
 albums = [
     ("Welcome to my Nightmare", "Alice Cooper", 1975,
      [

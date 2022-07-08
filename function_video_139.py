@@ -127,7 +127,7 @@
 ### documentation for  economy of exception https://devguide.python.org/documenting/#economy-of-expression
 
 # def fibonacci(n: int) -> int:
-#     """Returns] the `n`-th Fibonacci number, for prositive `n`."""
+#     """Returns the `n`-th Fibonacci number, for prositive `n`."""
 
 #     if 0 <= n <= 1:
 #         return n
