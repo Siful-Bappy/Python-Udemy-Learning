@@ -103,33 +103,121 @@
 ### video 187 --- Dictionary menu challange solution
 ### video 189 --- Adding items to a dictionary
 
-available_parts = {
-    "1": "computer",
-    "2": "monitor",
-    "3": "keyboard",
-    "4": "mouse",
-    "5": "HDMI Cable",
-    "6": "HDMIdvd drive",
+# available_parts = {
+#     "1": "computer",
+#     "2": "monitor",
+#     "3": "keyboard",
+#     "4": "mouse",
+#     "5": "HDMI Cable",
+#     "6": "HDMIdvd drive",
+# }
+
+# current_choice = None
+# computer_parts = {}
+# while current_choice != "0":
+#     if current_choice in available_parts:
+#         choose_part = available_parts[current_choice]
+#         if current_choice in computer_parts:
+#             print(f"Removing: {choose_part}")
+#             available_parts.pop(current_choice)
+#         else:
+#             print(f"adding: {choose_part}")
+#             computer_parts[current_choice] = choose_part
+#         print(f"Your dictionary now contains: {computer_parts})")
+
+#     else:
+#         print("Please Select a choice from the list")
+#         for key, value in available_parts.items():
+#             print(f" {key}: {value}")
+#         print("0: to finish")
+    
+#     current_choice = input("> ")
+
+
+
+### video 190 --- Smart fridge
+### video 191 --- What's for tea
+
+from numpy import choose
+
+
+pantry = {
+    "chicken": 500,
+    "lemon": 2,
+    "cumin": 24,
+    "paprika": 18,
+    "chilli powder": 7,
+    "yogurt": 300,
+    "oil": 450,
+    "onion": 5,
+    "garlic": 9,
+    "ginger": 2,
+    "tomato puree": 125,
+    "almonds": 75,
+    "rice": 500,
+    "coriander": 20,
+    "lime": 3,
+    "pepper": 8,
+    "egg": 6,
+    "pizza": 2,
+    "spam": 1,
 }
 
-current_choice = None
-computer_parts = {}
-while current_choice != "0":
-    if current_choice in available_parts:
-        choose_part = available_parts[current_choice]
-        if current_choice in computer_parts:
-            print(f"Removing: {choose_part}")
-            available_parts.pop(current_choice)
-        else:
-            print(f"adding: {choose_part}")
-            computer_parts[current_choice] = choose_part
-        print(f"Your dictionary now contains: {computer_parts})")
+recipes = {
+    "Butter chicken": [
+        "chicken",
+        "lemon",
+        "cumin",
+        "paprika",
+        "chilli powder",
+        "yogurt",
+        "oil",
+        "onion",
+        "garlic",
+        "ginger",
+        "tomato puree",
+        "almonds",
+        "rice",
+        "coriander",
+        "lime",
+    ],
+    "Chicken and chips": [
+        "chicken",
+        "potatoes",
+        "salt",
+        "malt vinegar",
+    ],
+    "Pizza": [
+        "pizza",
+    ],
+    "Egg sandwich": [
+        "egg",
+        "bread",
+        "butter",
+    ],
+    "Beans on toast": [
+        "beans",
+        "bread",
+    ],
+    "Spam a la tin": [
+        "spam",
+        "tin opener",
+        "spoon",
+    ],
+}
 
-    else:
-        print("Please Select a choice from the list")
-        for key, value in available_parts.items():
-            print(f" {key}: {value}")
-        print("0: to finish")
+display_dict = {}
+
+for index, key in enumerate(recipes):
+    # print("{}: {}".format(index + 1, key))
+    display_dict[str(index + 1)] = key
+
+while True:
+    print("Please choose your recipe")
+    print("-" * 25)
+    for key, value in display_dict.items():
+        print("{}: {}".format(key, value))
     
-    current_choice = input("> ")
-
+    choose = input("-> ")
+    if choose == "0":
+        break

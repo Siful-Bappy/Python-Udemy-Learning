@@ -195,15 +195,25 @@
 
 ### video 175 *args
 
-numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+# numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9)
 
 # print(numbers)
 # print(*numbers)
 # print(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
-def test_star(*args):
-    print(args)
-    for x in args:
-        print(x)
+# def test_star(*args):
+#     print(args)
+#     for x in args:
+#         print(x)
 
-test_star(1, 2, 3, 4, 5, 6, 7)
+# test_star(1, 2, 3, 4, 5, 6, 7)
+
+available_parts = {
+    "1": "computer",
+    "2": "monitor",
+    "3": "keyboard",
+    "4": "mouse",
+    "5": "HDMI Cable",
+    "6": "HDMIdvd drive",
+}
+
