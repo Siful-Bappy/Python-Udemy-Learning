@@ -145,70 +145,70 @@
 ### video 198 --- The setdefault method
 
 
-pantry = {
-    "chicken": 500,
-    "lemon": 2,
-    "cumin": 24,
-    "paprika": 18,
-    "chilli powder": 7,
-    "yogurt": 300,
-    "oil": 450,
-    "onion": 5,
-    "garlic": 9,
-    "ginger": 2,
-    "tomato puree": 125,
-    "almonds": 75,
-    "rice": 500,
-    "coriander": 20,
-    "lime": 3,
-    "pepper": 8,
-    "egg": 6,
-    "pizza": 2,
-    "spam": 1,
-}
+# pantry = {
+#     "chicken": 500,
+#     "lemon": 2,
+#     "cumin": 24,
+#     "paprika": 18,
+#     "chilli powder": 7,
+#     "yogurt": 300,
+#     "oil": 450,
+#     "onion": 5,
+#     "garlic": 9,
+#     "ginger": 2,
+#     "tomato puree": 125,
+#     "almonds": 75,
+#     "rice": 500,
+#     "coriander": 20,
+#     "lime": 3,
+#     "pepper": 8,
+#     "egg": 6,
+#     "pizza": 2,
+#     "spam": 1,
+# }
 
-recipes = {
-    "Butter chicken": [
-        "chicken",
-        "lemon",
-        "cumin",
-        "paprika",
-        "chilli powder",
-        "yogurt",
-        "oil",
-        "onion",
-        "garlic",
-        "ginger",
-        "tomato puree",
-        "almonds",
-        "rice",
-        "coriander",
-        "lime",
-    ],
-    "Chicken and chips": [
-        "chicken",
-        "potatoes",
-        "salt",
-        "malt vinegar",
-    ],
-    "Pizza": [
-        "pizza",
-    ],
-    "Egg sandwich": [
-        "egg",
-        "bread",
-        "butter",
-    ],
-    "Beans on toast": [
-        "beans",
-        "bread",
-    ],
-    "Spam a la tin": [
-        "spam",
-        "tin opener",
-        "spoon",
-    ],
-}
+# recipes = {
+#     "Butter chicken": [
+#         "chicken",
+#         "lemon",
+#         "cumin",
+#         "paprika",
+#         "chilli powder",
+#         "yogurt",
+#         "oil",
+#         "onion",
+#         "garlic",
+#         "ginger",
+#         "tomato puree",
+#         "almonds",
+#         "rice",
+#         "coriander",
+#         "lime",
+#     ],
+#     "Chicken and chips": [
+#         "chicken",
+#         "potatoes",
+#         "salt",
+#         "malt vinegar",
+#     ],
+#     "Pizza": [
+#         "pizza",
+#     ],
+#     "Egg sandwich": [
+#         "egg",
+#         "bread",
+#         "butter",
+#     ],
+#     "Beans on toast": [
+#         "beans",
+#         "bread",
+#     ],
+#     "Spam a la tin": [
+#         "spam",
+#         "tin opener",
+#         "spoon",
+#     ],
+# }
 
 # in get method item will add
 # chicken_quantity = pantry.setdefault("chicken", 0)
@@ -219,112 +219,113 @@ recipes = {
 # ketchup_quantity = pantry.get("ketchup", 0)
 # print(ketchup_quantity)
 
-def add_shopping_item(data: dict, item: str, amount: int) -> None:
-    """Add a tuple containing `item` and `amount` to the `data` dict."""
-    # if item in data:
-    #     data[item] += amount
+# def add_shopping_item(data: dict, item: str, amount: int) -> None:
+#     """Add a tuple containing `item` and `amount` to the `data` dict."""
+#     # if item in data:
+#     #     data[item] += amount
+#     # else:
+#     #     data[item] = amount
+#     data[item] = data.setdefault(item, 0) + amount
+
+
+# display_dict = {str(index + 1): meal for index, meal in enumerate(recipes)}
+# display_dict = {}
+# for index, key in enumerate(recipes):
+#     display_dict[str(index + 1)] = key
+
+# shopping_list = {}
+
+# while True:
+#     # Display a menu of the recipes we know how to cook
+#     print("Please choose your recipe")
+#     print("-------------------------")
+#     for key, value in display_dict.items():
+#         print(f"{key} - {value}")
+
+#     choice = input(": ")
+
+#     if choice == "0":
+#         break
+#     elif choice in display_dict:
+#         selected_item = display_dict[choice]
+#         print(f"You have selected {selected_item}")
+#         print("checking ingredients ...")
+#         ingredients = recipes[selected_item]
+#         print(ingredients)
+#         for food_item, required_quantity in ingredients.items():
+#             quantity_in_pantry = pantry.get(food_item, 0)
+#             if required_quantity <= quantity_in_pantry:
+#                 print(f"\t{food_item} OK")
+#             else:
+#                 quantity_to_buy = required_quantity - quantity_in_pantry
+#                 print(f"\tYou need to buy {quantity_to_buy} of {food_item}")
+#                 add_shopping_item(shopping_list, food_item, quantity_to_buy)
+
+# for things in shopping_list.items():
+#     print(things)
+
+
+### video 200 --- The `dict` documentation
+### video 201 --- The remaing `dict` method
+
+# d = {
+#     0: "zero",
+#     1: "one",
+#     2: "two",
+#     3: "three",
+#     4: "four",
+#     5: "five",
+#     6: "six",
+#     7: "seven",
+#     8: "eight",
+#     9: "nine",
+# }
+
+# pantry_items = ['chicken', 'spam', 'egg', 'bread', 'lemon']
+
+### make list to a dictionary key and can set default values
+# new_dict = dict.fromkeys(pantry_items, 0)
+# print(new_dict)
+
+### make dictionary key to a list
+# keys = d.keys()
+# print(keys)
+
+# for item in d.keys():
+#     print(item)
+
+
+### video 202 --- The dict `update` method
+
+d = {
+    0: "zero",
+    1: "one",
+    2: "two",
+    3: "three",
+    4: "four",
+    5: "five",
+    6: "six",
+    7: "seven",
+    8: "eight",
+    9: "nine",
+}
+
+pantry_items = ['chicken', 'spam', 'egg', 'bread', 'lemon']
+
+d2 = {
+    7: "Lucky seven",
+    10: "Ten",
+    3: "This is the new three"
+}
+
+d.update(d2)
+
+# for key, value in d.items():
+#     print(key, value)
 
+d.update(enumerate(pantry_items))
+for key, value in d.items():
+    print(key, value)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    # else:
-    #     data[item] = amount
-    data[item] = data.setdefault(item, 0) + amount
-
-
-display_dict = {str(index + 1): meal for index, meal in enumerate(recipes)}
-display_dict = {}
-for index, key in enumerate(recipes):
-    display_dict[str(index + 1)] = key
-
-shopping_list = {}
-
-while True:
-    # Display a menu of the recipes we know how to cook
-    print("Please choose your recipe")
-    print("-------------------------")
-    for key, value in display_dict.items():
-        print(f"{key} - {value}")
-
-    choice = input(": ")
-
-    if choice == "0":
-        break
-    elif choice in display_dict:
-        selected_item = display_dict[choice]
-        print(f"You have selected {selected_item}")
-        print("checking ingredients ...")
-        ingredients = recipes[selected_item]
-        print(ingredients)
-        for food_item, required_quantity in ingredients.items():
-            quantity_in_pantry = pantry.get(food_item, 0)
-            if required_quantity <= quantity_in_pantry:
-                print(f"\t{food_item} OK")
-            else:
-                quantity_to_buy = required_quantity - quantity_in_pantry
-                print(f"\tYou need to buy {quantity_to_buy} of {food_item}")
-                add_shopping_item(shopping_list, food_item, quantity_to_buy)
-
-for things in shopping_list.items():
-    print(things)
 
 
