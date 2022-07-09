@@ -297,6 +297,39 @@
 
 ### video 202 --- The dict `update` method
 
+# d = {
+#     0: "zero",
+#     1: "one",
+#     2: "two",
+#     3: "three",
+#     4: "four",
+#     5: "five",
+#     6: "six",
+#     7: "seven",
+#     8: "eight",
+#     9: "nine",
+# }
+
+# pantry_items = ['chicken', 'spam', 'egg', 'bread', 'lemon']
+
+# d2 = {
+#     7: "Lucky seven",
+#     10: "Ten",
+#     3: "This is the new three"
+# }
+
+# d.update(d2)
+
+# for key, value in d.items():
+#     print(key, value)
+
+# d.update(enumerate(pantry_items))
+# for key, value in d.items():
+#     print(key, value)
+
+
+### video 203 --- The dict `values` method
+
 d = {
     0: "zero",
     1: "one",
@@ -312,20 +345,21 @@ d = {
 
 pantry_items = ['chicken', 'spam', 'egg', 'bread', 'lemon']
 
-d2 = {
-    7: "Lucky seven",
-    10: "Ten",
-    3: "This is the new three"
-}
+# v = d.values()
+# print(v)
 
-d.update(d2)
+keys = list(d.keys())
+values = list(d.values())
 
-# for key, value in d.items():
-#     print(key, value)
+# will produce the same result however in first code we copy the and store in a variable
+if "four" in values:
+    index = values.index("four")
+    key = keys[index]
+    print(f"{d[key]} was found in the key {key}")
 
-d.update(enumerate(pantry_items))
+# here we are not copying anything but iterating over the values
 for key, value in d.items():
-    print(key, value)
-
+    if "four" in value:
+        print(f"{d[key]} was found in the key {key}")
 
 
