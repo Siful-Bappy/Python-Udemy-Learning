@@ -998,10 +998,49 @@
 
 ### video 235 --- Set symmetric difference
 
-morning = {"java", "c", "ruby", "lisp", "c#"}
-afternoon = {"Python", "c#", "java", "c", "ruby"}
+# morning = {"java", "c", "ruby", "lisp", "c#"}
+# afternoon = {"Python", "c#", "java", "c", "ruby"}
 
-possible_course = morning ^ afternoon
-possible_course = set(morning).symmetric_difference(afternoon)
-print(possible_course)
+# possible_course = morning ^ afternoon
+# possible_course = set(morning).symmetric_difference(afternoon)
+# print(possible_course)
 
+
+### video 236 --- Subset and supersets
+### video 237 --- Subset and supersets in Python
+
+# animals = {"Turtle", "Horse", "Robin", "Python", "Swallow", "Hedgehog", "Wren", "Aardvark", "Cat"}
+# birds = {"Robin", "Swallow", "Wren"}
+# print(f"Birds is a subset of animals {birds.issubset(animals)}")
+# print(f"Animals is a superset of birds {animals.issuperset(birds)}")
+
+# ### subset and supper set
+# print(birds <= animals)
+# print(animals >= birds)
+# print()
+# ### proper set
+# print(birds == animals)
+# print(birds < animals)
+# print(animals > birds)
+
+
+### video 238 --- Practical application of subsets and supersets
+
+required_skills = ["python", "github", "linux"]
+
+candidates = {
+    'anna': {'java', 'linux', 'windows', 'github', 'python', 'full stack'},
+    'bob': {'github', 'linux', 'python'},
+    'carol': {'linux', 'javascript', 'html', 'python', 'github'},
+    'daniel': {'pascal', 'java', 'c++', 'github'},
+    'ekani': {'html', 'css', 'github', 'python', 'linux'},
+    'fenna': {'linux', 'pascal', 'java', 'c', 'lisp', 'modula-2', 'perl', 'github'},
+}
+
+interviewees = set()
+for candidate, skills in candidates.items():
+    # if skills.issuperset(required_skills):
+    if skills > set(required_skills):
+        interviewees.add(candidate)
+
+print(interviewees)
