@@ -330,36 +330,162 @@
 
 ### video 203 --- The dict `values` method
 
-d = {
-    0: "zero",
-    1: "one",
-    2: "two",
-    3: "three",
-    4: "four",
-    5: "five",
-    6: "six",
-    7: "seven",
-    8: "eight",
-    9: "nine",
-}
+# d = {
+#     0: "zero",
+#     1: "one",
+#     2: "two",
+#     3: "three",
+#     4: "four",
+#     5: "five",
+#     6: "six",
+#     7: "seven",
+#     8: "eight",
+#     9: "nine",
+# }
 
-pantry_items = ['chicken', 'spam', 'egg', 'bread', 'lemon']
+# pantry_items = ['chicken', 'spam', 'egg', 'bread', 'lemon']
 
-# v = d.values()
-# print(v)
+# # v = d.values()
+# # print(v)
 
-keys = list(d.keys())
-values = list(d.values())
+# keys = list(d.keys())
+# values = list(d.values())
 
-# will produce the same result however in first code we copy the and store in a variable
-if "four" in values:
-    index = values.index("four")
-    key = keys[index]
-    print(f"{d[key]} was found in the key {key}")
+# # will produce the same result however in first code we copy the and store in a variable
+# if "four" in values:
+#     index = values.index("four")
+#     key = keys[index]
+#     print(f"{d[key]} was found in the key {key}")
 
-# here we are not copying anything but iterating over the values
-for key, value in d.items():
-    if "four" in value:
-        print(f"{d[key]} was found in the key {key}")
+# # here we are not copying anything but iterating over the values
+# for key, value in d.items():
+#     if "four" in value:
+#         print(f"{d[key]} was found in the key {key}")
+
+
+### video 204 --- Reference to mutable objects
+### Shallow_copy
+
+# animals = {
+#     "lion": "scary",
+#     "elephant": "big",
+#     "teddy": "cuddly",
+# }
+
+# things = animals
+# things = animals.copy()
+# animals["teddy"] = "toy"
+# print(things["teddy"])
+
+
+### video 205 --- Shallow copy
+### video 206 --- Shallow copy step-by-step
+### documentation for shallow copy --- https://docs.python.org/3/library/copy.html
+
+# lion_list = ["scary", "big", "cat"]
+# elephant_list = ["big", "gray", "wrinkled"]
+# teddy_list = ["cuddly", "stuffed"]
+
+# animals = {
+#     "lion": lion_list,
+#     "elephant": elephant_list,
+#     "teddy": teddy_list,
+# }
+
+# things = animals.copy()
+
+# things["teddy"].append("toy")
+# print(things["teddy"])
+# print(animals["teddy"])
+
+
+### video 207 --- Deep copy
+
+# import copy
+
+# lion_list = ["scary", "big", "cat"]
+# elephant_list = ["big", "gray", "wrinkled"]
+# teddy_list = ["cuddly", "stuffed"]
+
+# animals = {
+#     "lion": lion_list,
+#     "elephant": elephant_list,
+#     "teddy": teddy_list,
+# }
+
+# things = copy.deepcopy(animals)
+
+# things["teddy"].append("toy")
+# print(things["teddy"])
+# print(animals["teddy"])
+
+
+### video 208 --- Simple deep copy solution
+
+### video 209 --- Hash function
+
+### video 210 --- A really bad hashing function
+
+# data = [
+#     ("orange", "a sweet, orange, citrus fruit"),
+#     ("apple", "good for making cider"),
+#     ("lemon", "a sour, yellow citrus fruit"),
+#     ("grape", "a small, sweet fruit growing in bunches"),
+#     ("melon", "sweet and juicy"),
+# ]
+
+# print(ord("a"))
+# # print(ord("b"))
+# # print(ord("z"))
+
+
+# def simple_hash(s: str) -> int:
+#     """A ridiculously simple hashing function"""
+#     basic_hash = ord(s[0])
+#     return basic_hash % 10
+
+
+# for key, value in data:
+#     h = simple_hash(key)
+#     # h = hash(key)
+#     print(key, h)
+
+
+### video 211 --- Hash tables
+
+# data = [
+#     ("orange", "a sweet, orange, citrus fruit",),
+#     ("apple", "good for making cider"),
+#     ("lemon", "a sour, yellow citrus fruit"),
+#     ("grape", "a small, sweet fruit growing in bunches"),
+#     ("melon", "sweet and juicy"),
+# ]
+
+# def simple_hash(s: str) -> int:
+#     """A ridiculously simple hashing function"""
+#     basic_hash = ord(s[0])
+#     return basic_hash % 10
+
+# keys = ["a"] * 10
+# values = keys.copy()
+# for key, value in data:
+#     h = simple_hash(key)
+#     print(key, h)
+
+#     keys[h] = key
+#     values[h] = value
+
+# print(keys, " : ", values)
+
+
+### video 216 --- Introduce set
+
+### video 217 --- Python set
+
+farm_animal = {"cow", "sheep", "hen", "goat", "horse"}
+print(farm_animal)
+
+for animal in farm_animal:
+    print(animal)
 
 
