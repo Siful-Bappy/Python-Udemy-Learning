@@ -572,61 +572,161 @@
 
 ### video 224 --- The `discard` method
 
-travel_mode = {"1": "car", "2": "plane"}
+# travel_mode = {"1": "car", "2": "plane"}
 
-items = {
-    "can opener",
-    "fuel",
-    "jumper",
-    "knife",
-    "matches",
-    "razor blades",
-    "razor",
-    "scissors",
-    "shampoo",
-    "shaving cream",
-    "shirts (3)",
-    "shorts",
-    "sleeping bag(s)",
-    "soap",
-    "socks (3 pairs)",
-    "stove",
-    "tent",
-    "mug",
-    "toothbrush",
-    "toothpaste",
-    "towel",
-    "underwear (3 pairs)",
-    "water carrier",
+# items = {
+#     "can opener",
+#     "fuel",
+#     "jumper",
+#     "knife",
+#     "matches",
+#     "razor blades",
+#     "razor",
+#     "scissors",
+#     "shampoo",
+#     "shaving cream",
+#     "shirts (3)",
+#     "shorts",
+#     "sleeping bag(s)",
+#     "soap",
+#     "socks (3 pairs)",
+#     "stove",
+#     "tent",
+#     "mug",
+#     "toothbrush",
+#     "toothpaste",
+#     "towel",
+#     "underwear (3 pairs)",
+#     "water carrier",
+# }
+
+# restricted_items = {
+#     "catapult",
+#     "fuel",
+#     "gun",
+#     "knife",
+#     "razor blades",
+#     "scissors",
+#     "shampoo",
+# }
+
+# print("Please choose your mode of travel:")
+# for key, value in travel_mode.items():
+#     print(f"{key}: {value}")
+#     # Python 3.5 and earlier
+#     # print("{}: {}".format(key, value))
+
+# mode = "-"
+# while mode not in travel_mode:
+#     mode = input("> ")
+
+# if mode == "2":
+#     # travelling by plane, remove restricted items
+#     for restricted_item in restricted_items:
+#         # if instand of discard, use remove then it will through error because one item in restricted_items have but not in items
+#         items.discard(restricted_item)
+
+# # print the packing list
+# print("You need to pack:")
+# for item in sorted(items):
+#     print(item)
+
+
+### video `remove` method
+
+# drugs
+# amlodipine = ("amlodipine", "Blood pressure")
+# buspirone = ("buspirone", "Anxiety disorders")
+# carbimazole = ("carbimazole", "Antithyroid agent")
+# citalopram = ("citalopram", "Antidepressant")
+# edoxaban = ("edoxaban", "anti-coagulant")
+# erythromycin = ("erythromycin", "Antibiotic")
+# lusinopril = ("lusinopril", "High blood pressure")
+# metformin = ("metformin", "Type 2 diabetes")
+# methotrexate = ("methotrexate", "Rheumatoid arthritis")
+# paracetamol = ("paracetamol", "Painkiller")
+# propranol = ("propranol", "Beta blocker")
+# simvastatin = ("simvastatin", "High cholesterol")
+# warfarin = ("warfarin", "anti-coagulant")
+
+# # Drugs that shouldn't be taken together
+# adverse_interactions = [
+#     {metformin, amlodipine},
+#     {simvastatin, erythromycin},
+#     {citalopram, buspirone},
+#     {warfarin, citalopram},
+#     {warfarin, edoxaban},
+#     {warfarin, erythromycin},
+#     {warfarin, amlodipine},
+# ]
+
+# # Patient prescriptions
+# patients = {
+#     "Anne": {methotrexate, paracetamol},
+#     "Bob": {carbimazole, erythromycin, methotrexate, paracetamol},
+#     "Charley": {buspirone, lusinopril, metformin},
+#     "Denise": {amlodipine, lusinopril, metformin, warfarin},
+#     "Eddie": {amlodipine, propranol, simvastatin, warfarin},
+#     "Frank": {buspirone, citalopram, propranol, warfarin},
+#     "Georgia": {carbimazole, edoxaban, warfarin},
+#     "Helmut": {erythromycin, paracetamol, propranol, simvastatin},
+#     "Izabella": {amlodipine, citalopram, simvastatin, warfarin},
+#     "John": {simvastatin},
+#     "Kenny": {amlodipine, citalopram, metformin},
+# }
+
+# trial_patients = ["Denise", "Eddie", "Frank", "Georgia"]
+
+# # Remove warfarin and add Edoxaban
+# for patient in trial_patients:
+#     prescription = patients[patient]
+    
+#     if warfarin in prescription:
+#         prescription.remove(warfarin)
+#         prescription.add(edoxaban)
+#     else: 
+#         print(f"Patient {patient} is not taking warfarin.")
+#         print(f"Please remove {patient} from the trial")
+        
+#     print(patient, prescription)
+
+
+### video 226 --- The `pop` method
+
+trail_patients = {"Denise", "Eddie", "Frank", "Georgia", "Kenny"}
+
+drugs
+amlodipine = ("amlodipine", "Blood pressure")
+buspirone = ("buspirone", "Anxiety disorders")
+carbimazole = ("carbimazole", "Antithyroid agent")
+citalopram = ("citalopram", "Antidepressant")
+edoxaban = ("edoxaban", "anti-coagulant")
+erythromycin = ("erythromycin", "Antibiotic")
+lusinopril = ("lusinopril", "High blood pressure")
+metformin = ("metformin", "Type 2 diabetes")
+methotrexate = ("methotrexate", "Rheumatoid arthritis")
+paracetamol = ("paracetamol", "Painkiller")
+propranol = ("propranol", "Beta blocker")
+simvastatin = ("simvastatin", "High cholesterol")
+warfarin = ("warfarin", "anti-coagulant")
+
+patients = {
+    "Anne": {methotrexate, paracetamol},
+    "Bob": {carbimazole, erythromycin, methotrexate, paracetamol},
+    "Charley": {buspirone, lusinopril, metformin},
+    "Denise": {amlodipine, lusinopril, metformin, warfarin},
+    "Eddie": {amlodipine, propranol, simvastatin, warfarin},
+    "Frank": {buspirone, citalopram, propranol, warfarin},
+    "Georgia": {carbimazole, edoxaban, warfarin},
+    "Helmut": {erythromycin, paracetamol, propranol, simvastatin},
+    "Izabella": {amlodipine, citalopram, simvastatin, warfarin},
+    "John": {simvastatin},
+    "Kenny": {amlodipine, citalopram, metformin},
 }
 
-restricted_items = {
-    "catapult",
-    "fuel",
-    "gun",
-    "knife",
-    "razor blades",
-    "scissors",
-    "shampoo",
-}
+while trail_patients: 
+    patient = trail_patients.pop()
+    print(patient, end=": ")
+    prescreption = patients[patient]
+    print(prescreption)
 
-print("Please choose your mode of travel:")
-for key, value in travel_mode.items():
-    print(f"{key}: {value}")
-    # Python 3.5 and earlier
-    # print("{}: {}".format(key, value))
-
-mode = "-"
-while mode not in travel_mode:
-    mode = input("> ")
-
-if mode == "2":
-    # travelling by plane, remove restricted items
-    for restricted_item in restricted_items:
-        # if instand of discard, use remove then it will through error because one item in restricted_items have but not in items
-        items.discard(restricted_item)
-
-# print the packing list
-print("You need to pack:")
-for item in sorted(items):
-    print(item)
