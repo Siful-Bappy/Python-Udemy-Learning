@@ -693,9 +693,88 @@
 
 ### video 226 --- The `pop` method
 
-trail_patients = {"Denise", "Eddie", "Frank", "Georgia", "Kenny"}
+# trail_patients = {"Denise", "Eddie", "Frank", "Georgia", "Kenny"}
 
-drugs
+# drugs
+# amlodipine = ("amlodipine", "Blood pressure")
+# buspirone = ("buspirone", "Anxiety disorders")
+# carbimazole = ("carbimazole", "Antithyroid agent")
+# citalopram = ("citalopram", "Antidepressant")
+# edoxaban = ("edoxaban", "anti-coagulant")
+# erythromycin = ("erythromycin", "Antibiotic")
+# lusinopril = ("lusinopril", "High blood pressure")
+# metformin = ("metformin", "Type 2 diabetes")
+# methotrexate = ("methotrexate", "Rheumatoid arthritis")
+# paracetamol = ("paracetamol", "Painkiller")
+# propranol = ("propranol", "Beta blocker")
+# simvastatin = ("simvastatin", "High cholesterol")
+# warfarin = ("warfarin", "anti-coagulant")
+
+# patients = {
+#     "Anne": {methotrexate, paracetamol},
+#     "Bob": {carbimazole, erythromycin, methotrexate, paracetamol},
+#     "Charley": {buspirone, lusinopril, metformin},
+#     "Denise": {amlodipine, lusinopril, metformin, warfarin},
+#     "Eddie": {amlodipine, propranol, simvastatin, warfarin},
+#     "Frank": {buspirone, citalopram, propranol, warfarin},
+#     "Georgia": {carbimazole, edoxaban, warfarin},
+#     "Helmut": {erythromycin, paracetamol, propranol, simvastatin},
+#     "Izabella": {amlodipine, citalopram, simvastatin, warfarin},
+#     "John": {simvastatin},
+#     "Kenny": {amlodipine, citalopram, metformin},
+# }
+
+# while trail_patients: 
+#     patient = trail_patients.pop()
+#     print(patient, end=": ")
+#     prescreption = patients[patient]
+#     print(prescreption)
+
+
+### video 227 --- Set Union in practice
+### video 228 --- Union Update
+
+# amlodipine = ("amlodipine", "Blood pressure")
+# buspirone = ("buspirone", "Anxiety disorders")
+# carbimazole = ("carbimazole", "Antithyroid agent")
+# citalopram = ("citalopram", "Antidepressant")
+# edoxaban = ("edoxaban", "anti-coagulant")
+# erythromycin = ("erythromycin", "Antibiotic")
+# lusinopril = ("lusinopril", "High blood pressure")
+# metformin = ("metformin", "Type 2 diabetes")
+# methotrexate = ("methotrexate", "Rheumatoid arthritis")
+# paracetamol = ("paracetamol", "Painkiller")
+# propranol = ("propranol", "Beta blocker")
+# simvastatin = ("simvastatin", "High cholesterol")
+# warfarin = ("warfarin", "anti-coagulant")
+
+# adverse_interactions = [
+#     {metformin, amlodipine},
+#     {simvastatin, erythromycin},
+#     {citalopram, buspirone},
+#     {warfarin, citalopram},
+#     {warfarin, edoxaban},
+#     {warfarin, erythromycin},
+#     {warfarin, amlodipine},
+# ]
+
+# meds_to_watch = set()
+
+# for interaction in adverse_interactions:
+    # meds_to_watch = meds_to_watch.union(interaction)
+    ### will produce the same result
+    # meds_to_watch = meds_to_watch | interaction
+
+    ### update method
+    # meds_to_watch.update(interaction)
+    ### another way to update
+    # meds_to_watch =| interaction
+
+# print(sorted(meds_to_watch))
+
+### video 230 --- Advantage of the set operation method over the operators
+### video 231 --- Set intersection
+
 amlodipine = ("amlodipine", "Blood pressure")
 buspirone = ("buspirone", "Anxiety disorders")
 carbimazole = ("carbimazole", "Antithyroid agent")
@@ -710,23 +789,18 @@ propranol = ("propranol", "Beta blocker")
 simvastatin = ("simvastatin", "High cholesterol")
 warfarin = ("warfarin", "anti-coagulant")
 
-patients = {
-    "Anne": {methotrexate, paracetamol},
-    "Bob": {carbimazole, erythromycin, methotrexate, paracetamol},
-    "Charley": {buspirone, lusinopril, metformin},
-    "Denise": {amlodipine, lusinopril, metformin, warfarin},
-    "Eddie": {amlodipine, propranol, simvastatin, warfarin},
-    "Frank": {buspirone, citalopram, propranol, warfarin},
-    "Georgia": {carbimazole, edoxaban, warfarin},
-    "Helmut": {erythromycin, paracetamol, propranol, simvastatin},
-    "Izabella": {amlodipine, citalopram, simvastatin, warfarin},
-    "John": {simvastatin},
-    "Kenny": {amlodipine, citalopram, metformin},
-}
+adverse_interactions = [
+    {metformin, amlodipine},
+    {simvastatin, erythromycin},
+    {citalopram, buspirone},
+    {warfarin, citalopram},
+    {warfarin, edoxaban},
+    {warfarin, erythromycin},
+    {warfarin, amlodipine},
+]
 
-while trail_patients: 
-    patient = trail_patients.pop()
-    print(patient, end=": ")
-    prescreption = patients[patient]
-    print(prescreption)
+meds_to_watch = set()
 
+meds_to_watch.update(*adverse_interactions)
+
+print(sorted(meds_to_watch))
