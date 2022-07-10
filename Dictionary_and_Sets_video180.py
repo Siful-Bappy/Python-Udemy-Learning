@@ -544,12 +544,89 @@
 
 ### video 222 --- Using a set to remove duplicate values
 
-data = ["blue", "green", "yellow", "orange", "black", "red", "yellow", "orange", "black"]
+# data = ["blue", "green", "yellow", "orange", "black", "red", "yellow", "orange", "black"]
 # we will get a sorted list with no duplicates
-unique_data = sorted(set(data))
-print(unique_data)
+# unique_data = sorted(set(data))
+# print(unique_data)
 
 # create a list of unique colours, keeping the order they appeared
 
-unique_data2 = list(dict.fromkeys(data))
-print(unique_data2)
+# unique_data2 = list(dict.fromkeys(data))
+# print(unique_data2)
+
+
+### video 223 --- Deleting items from set
+# there are 3 ways to delete a item form set
+
+# small_ints = set(range(21))
+# print(small_ints)
+
+# delete all the items from the set
+# small_ints.clear()
+# print(small_ints)
+# Remove a item form the set
+# small_ints.discard(10)
+# small_ints.remove(11)
+
+# print(small_ints)
+
+### video 224 --- The `discard` method
+
+travel_mode = {"1": "car", "2": "plane"}
+
+items = {
+    "can opener",
+    "fuel",
+    "jumper",
+    "knife",
+    "matches",
+    "razor blades",
+    "razor",
+    "scissors",
+    "shampoo",
+    "shaving cream",
+    "shirts (3)",
+    "shorts",
+    "sleeping bag(s)",
+    "soap",
+    "socks (3 pairs)",
+    "stove",
+    "tent",
+    "mug",
+    "toothbrush",
+    "toothpaste",
+    "towel",
+    "underwear (3 pairs)",
+    "water carrier",
+}
+
+restricted_items = {
+    "catapult",
+    "fuel",
+    "gun",
+    "knife",
+    "razor blades",
+    "scissors",
+    "shampoo",
+}
+
+print("Please choose your mode of travel:")
+for key, value in travel_mode.items():
+    print(f"{key}: {value}")
+    # Python 3.5 and earlier
+    # print("{}: {}".format(key, value))
+
+mode = "-"
+while mode not in travel_mode:
+    mode = input("> ")
+
+if mode == "2":
+    # travelling by plane, remove restricted items
+    for restricted_item in restricted_items:
+        # if instand of discard, use remove then it will through error because one item in restricted_items have but not in items
+        items.discard(restricted_item)
+
+# print the packing list
+print("You need to pack:")
+for item in sorted(items):
+    print(item)
