@@ -482,10 +482,47 @@
 
 ### video 217 --- Python set
 
-farm_animal = {"cow", "sheep", "hen", "goat", "horse"}
-print(farm_animal)
+# farm_animal = {"cow", "sheep", "hen", "goat", "horse"}
+# print(farm_animal)
 
-for animal in farm_animal:
-    print(animal)
+# for animal in farm_animal:
+#     print(animal)
+
+### video 218 --- Implications of sets being unordered
+### set is unordered 
+### set can't be slice 
+### set can't be dupliccate
+### set is similar to list or tuple but more resticted 
+
+
+# farm_animal = {"cow", "sheep", "hen", "goat", "horse"}
+# goat = farm_animal[3]
+# print(farm_animal)
+
+# more_animal = {"cow", "sheep", "hen", "horse", "goat"}
+# if farm_animal == more_animal:
+#     print("Both set are equal")
+# else:
+#     print("Set are not equal")
+
+
+### video 219 --- Set membership
+### video 220 --- Testing set membership is fast
+
+choice = "-"  # initialise choice to something invalid
+while choice != "0":
+    if choice in set("12345"):
+        print("You chose {}".format(choice))
+    else:
+        print("Please choose your option from the list below:")
+        print("1:\tLearn Python")
+        print("2:\tLearn Java")
+        print("3:\tGo swimming")
+        print("4:\tHave dinner")
+        print("5:\tGo to bed")
+        print("0:\tExit")
+
+    choice = input("-> ")
+
 
 
