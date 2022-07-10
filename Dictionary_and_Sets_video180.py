@@ -509,20 +509,47 @@
 ### video 219 --- Set membership
 ### video 220 --- Testing set membership is fast
 
-choice = "-"  # initialise choice to something invalid
-while choice != "0":
-    if choice in set("12345"):
-        print("You chose {}".format(choice))
-    else:
-        print("Please choose your option from the list below:")
-        print("1:\tLearn Python")
-        print("2:\tLearn Java")
-        print("3:\tGo swimming")
-        print("4:\tHave dinner")
-        print("5:\tGo to bed")
-        print("0:\tExit")
+# choice = "-"  # initialise choice to something invalid
+# while choice != "0":
+#     if choice in set("12345"):
+#         print("You chose {}".format(choice))
+#     else:
+#         print("Please choose your option from the list below:")
+#         print("1:\tLearn Python")
+#         print("2:\tLearn Java")
+#         print("3:\tGo swimming")
+#         print("4:\tHave dinner")
+#         print("5:\tGo to bed")
+#         print("0:\tExit")
 
-    choice = input("-> ")
+#     choice = input("-> ")
 
 
+### video 221 --- Adding items to a set
 
+# numbers = {*""}
+# numbers = {*{}}
+
+# numbers = set()
+# print(type(numbers))
+# numbers.add(1)
+# print(numbers)
+
+# while len(numbers) < 4:
+#     next_value = input("Please enter your next value: ")
+#     numbers.add(next_value)
+
+# print(numbers)
+
+
+### video 222 --- Using a set to remove duplicate values
+
+data = ["blue", "green", "yellow", "orange", "black", "red", "yellow", "orange", "black"]
+# we will get a sorted list with no duplicates
+unique_data = sorted(set(data))
+print(unique_data)
+
+# create a list of unique colours, keeping the order they appeared
+
+unique_data2 = list(dict.fromkeys(data))
+print(unique_data2)
